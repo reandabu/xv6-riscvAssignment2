@@ -36,3 +36,15 @@ entry("getpid");
 entry("sbrk");
 entry("sleep");
 entry("uptime");
+entry("lcg_srand");       #     <-- Task0
+entry("lcg_rand");        #     <-- Task0
+entry("setgid");          #     <-- Task1
+entry("getgid");          #     <-- Task1
+entry("israeli_create");  #     <-- Task1
+entry("israeli_acquire"); #     <-- Task1
+entry("israeli_release"); #     <-- Task1
+entry("israeli_destroy"); #     <-- Task1
+entry("relay_reset");     #     <-- Task2
+entry("relay_inc");       #     <-- Task2
+entry("relay_get");       #     <-- Task2
+entry("relay_winner");    #     <-- Task2

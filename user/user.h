@@ -22,6 +22,18 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+int lcg_srand(uint);          //    <-- Task0
+uint lcg_rand(void);          //    <-- Task0
+int setgid(int);              //  Task1
+int getgid(void);             //  Task1
+int israeli_create(int);      //  Task1
+int israeli_acquire(int);     //  Task1
+int israeli_release(int);     //  Task1
+int israeli_destroy(int);     //  Task1
+int relay_reset(int);         //  Task2
+int relay_inc(int);           //  Task2
+int relay_get(int);           //  Task2
+int relay_winner(int);        //  Task2
 
 // ulib.c
 int stat(const char*, struct stat*);

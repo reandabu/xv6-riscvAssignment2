@@ -20,3 +20,15 @@
 #define SYS_link   19
 #define SYS_mkdir  20
 #define SYS_close  21
+#define SYS_lcg_srand 22    //           <-- Task0
+#define SYS_lcg_rand  23    //           <-- Task0
+#define SYS_setgid           24       //  Task1
+#define SYS_getgid           25       //  Task1
+#define SYS_israeli_create   26       //  Task1
+#define SYS_israeli_acquire  27       //  Task1
+#define SYS_israeli_release  28       //  Task1
+#define SYS_israeli_destroy  29       //  Task1
+#define SYS_relay_reset   30          //  Task2
+#define SYS_relay_inc     31          //  Task2
+#define SYS_relay_get     32          //  Task2
+#define SYS_relay_winner  33          //  Task2

@@ -101,6 +101,19 @@ extern uint64 sys_unlink(void);
 extern uint64 sys_link(void);
 extern uint64 sys_mkdir(void);
 extern uint64 sys_close(void);
+extern uint64 sys_lcg_srand(void);               //    <-- Task0
+extern uint64 sys_lcg_rand(void);                //    <-- Task0
+extern uint64 sys_setgid(void);                  //  Task1
+extern uint64 sys_getgid(void);                  //  Task1
+extern uint64 sys_israeli_create(void);          //  Task1
+extern uint64 sys_israeli_acquire(void);         //  Task1
+extern uint64 sys_israeli_release(void);         //  Task1
+extern uint64 sys_israeli_destroy(void);         //  Task1
+extern uint64 sys_relay_reset(void);             //  Task2
+extern uint64 sys_relay_inc(void);               //  Task2
+extern uint64 sys_relay_get(void);               //  Task2
+extern uint64 sys_relay_winner(void);            //  Task2
+
 
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
@@ -126,6 +139,18 @@ static uint64 (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+[SYS_lcg_srand] sys_lcg_srand,                //    <-- Task0
+[SYS_lcg_rand]  sys_lcg_rand,                 //    <-- Task0
+[SYS_setgid]          sys_setgid,             //  Task1
+[SYS_getgid]          sys_getgid,             //  Task1
+[SYS_israeli_create]  sys_israeli_create,     //  Task1
+[SYS_israeli_acquire] sys_israeli_acquire,    //  Task1
+[SYS_israeli_release] sys_israeli_release,    //  Task1
+[SYS_israeli_destroy] sys_israeli_destroy,    //  Task1
+[SYS_relay_reset]  sys_relay_reset,           //  Task2
+[SYS_relay_inc]    sys_relay_inc,             //  Task2
+[SYS_relay_get]    sys_relay_get,             //  Task2
+[SYS_relay_winner] sys_relay_winner,          //  Task2
 };
 
 void

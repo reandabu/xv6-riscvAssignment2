@@ -106,6 +106,8 @@ void            yield(void);
 int             either_copyout(int user_dst, uint64 dst, void *src, uint64 len);
 int             either_copyin(void *dst, int user_src, uint64 src, uint64 len);
 void            procdump(void);
+void            lcg_srand(uint);         //    <-- Task0
+uint            lcg_rand(void);          //    <-- Task0
 
 // swtch.S
 void            swtch(struct context*, struct context*);
@@ -123,6 +125,13 @@ void            acquiresleep(struct sleeplock*);
 void            releasesleep(struct sleeplock*);
 int             holdingsleep(struct sleeplock*);
 void            initsleeplock(struct sleeplock*, char*);
+
+// israeliLock.c
+void            israeli_init(void);          //  Task1
+int             israeli_create(int);         //  Task1
+int             israeli_acquire(int);        //  Task1
+int             israeli_release(int);        //  Task1
+int             israeli_destroy(int);        //  Task1
 
 // string.c
 int             memcmp(const void*, const void*, uint);
